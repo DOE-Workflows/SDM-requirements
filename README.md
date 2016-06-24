@@ -258,7 +258,7 @@ The system shall have an interface to industry standard personnel databases such
 
 3. Artifact Actions  **TO BE DISCUSSED**
 
-    1. **Create Artifact**: any Team Member may create an artifact in a folder. 4. Team Actions  (**TO BE DISCUSSED**)
+    1. **Create Artifact**: any Team Member may create an artifact in a folder. 
 
     2. **Add File Version to Artifact**: Assuming the artifact is not locked to a specific individual, any Team Member may commit a new version of a file to an artifact.
 
@@ -282,13 +282,11 @@ The system shall have an interface to industry standard personnel databases such
 
     12. **Relate Artifact to another Artifact:** An artifact may be related to another artifact. For example, there may be an artifact type of "Engineering Note" that may be related an artifact type of "Analysis Artifact". The specific relationship type determines the cardinality and directionality of any relationship, and specific relationships may carry particular attributes as well. The state of an artifact may prevent certain associations, and other Business Rules may also be applicable.
 
-    13. **Relate Artifact to other Object:** There are instances where an artifact should be relatable to other objects, such as Requirements. The specific use cases vary slightly by the other Object's controlling lifecycle and attributes, as well as the relationship between the Artifact and the other object. Nonetheless, the general case is that any Team Member may associate an Artifact with another relevant object in the Project.
+    13. **Lock to prevent modifications:** An owner or a Team Lead may lock an artifact to prevent modifications. The attributes on a locked artifact may only be modified by the locker, and only the locker may add new file versions to the artifact. The locked status does not affect viewing the artifact or downloading files (subject to other access control issues). Any Team Lead may remove a lock on an artifact.
 
-    14. **Lock to prevent modifications:** An owner or a Team Lead may lock an artifact to prevent modifications. The attributes on a locked artifact may only be modified by the locker, and only the locker may add new file versions to the artifact. The locked status does not affect viewing the artifact or downloading files (subject to other access control issues). Any Team Lead may remove a lock on an artifact.
+    14. **Register for Notifications**: Any Team Member may register for notifications about changes to an artifact. One may register for notifications about new files or file versions added, if the artifact is added to a folder (moved or linked to an additional one), when it is locked or unlocked for modifications/file commits, or when attributes are modified.
 
-    15. **Register for Notifications**: Any Team Member may register for notifications about changes to an artifact. One may register for notifications about new files or file versions added, if the artifact is added to a folder (moved or linked to an additional one), when it is locked or unlocked for modifications/file commits, or when attributes are modified.
-
-4. Team Actions **TO BE DISCUSSED**
+4. Team Actions 
 
     1.	**Add Person to Team:** Any Team Lead may add an individual to the project team. Adding a Team Member is inherently an NTK decision. Any registered user may be added to the team. Business Rules may prohibit certain additions depending upon project attributes (e.g., classification).
 
@@ -296,7 +294,7 @@ The system shall have an interface to industry standard personnel databases such
 
     3.	**Remove Person from Team:** Any Team Lead may remove an Team Lead or Team Member from a Project. The Project Manager may not be directly removed from the team, but instead a new Project Manager must be assigned, and then the previous Project Manager (who will now be a Team Lead)  may be removed.
 
-5. History Actions **TO BE DISCUSSED**
+5. History Actions 
 
     1.	**Automatic History:** Most activities (e.g., adding an artifact, committing a file version to an artifact, modifying attributes, etc.) automatically generate a history entry. History entries must be relatable to the user, the time of the action, and the specific object.
 
@@ -412,26 +410,34 @@ The system shall have an interface to industry standard personnel databases such
 
     >Discussion: these requirements generated a lot of discussion,  define lifecycles
 
-15.	Administrative Console  **FROM HERE TO END NEEDS TO BE DISCUSSED**
+15.	Administrative Console 
+    1. Allows you to operate with objects that exist in the database
+    2. Command line access
 
 16.	Unique Object Reference (i.e., an Object Identifier)
 
     1.	Must be stable
     2.	Must not be tied to a display attribute that can change
+    3.  Identical objects can have different ids
+    4.  Support for content-based hashing as an additional add-on
+        capabilty would be preferred
 
 17.	History entries created automatically by various activities
     1.	Ability to add custom history entries
-    2.	History must tie to particular objects
+    2.	History must tie to particular objects (**DEFINE "OBJECT" HERE?**)
+    3.  Compliance with ISO standards (9000, 27001, 27002) for auditability
+    4.  Specific list of activities to come later
 
-18.	Relationships between objects
-    1.	1Attributes on relationships
-    2.	Cardinality
+18.	Relationships between objects can be defined and have the following properties:
+    1.	Attributes on relationships
+    2.	Cardinality (number of objects in a relationship)
     3.	Type limited
     4.	Direction (to/from based upon object type)
     5.	Ability to use in traversal
     6.	Participate in the Trigger system
 
 19.	Ability to lock an object to prevent updates and/or file additions
+    
 
 20.	Robust Permission Model
     1.	Create
