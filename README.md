@@ -18,7 +18,7 @@ Simulation Data Management Requirements
 ## Combining input from the following laboratories:
 - [Lawrence Livermore National Laboratory](https://www.llnl.gov)
 - [Los Alamos National Laboratory](http://www.lanl.gov)
-- [Oakridge National Laboratory](https://www.ornl.gov)
+- [Oak Ridge National Laboratory](https://www.ornl.gov)
 - [Sandia National Laboratory](http://www.sandia.gov)
 
 ## Simulation Data Management Philosophy
